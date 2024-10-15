@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=3, initial-scale=1.0">
+    <title>Task Details</title>
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+</head>
+<body>
+    <h1>Task details</h1>
+    
+    <h2>Task title: {{ task.title }}</h2>
+    <p>
+        Description: {{ task.description }} <br>
+        Completed: {{ task.completed }} <br>
+        Created_at: {{ task.created_at}}
+    </p>
+
+    <a href="/tasks_list">All Task</a>
+</body>
+</html>

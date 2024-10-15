@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task List</title>
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css" />
+  </head>
+  <body>
+    <a href="/tasks_list">All Task</a> <br />
+    <a href="/tasks_list/?completed=1">Completed Task</a> <br />
+    <a href="/tasks_list/?completed=0">Pending Task</a> <br />
+    <a href="/search_task">Search Task</a> <br>
+    <a href="/create_task">Create Task</a>
+    <h2>All Task</h2>
+    <ul>
+      {% for task in tasks %}
+      <li>
+        <a href="{% url 'task_detail' task.id %}">{{ task.title }}</a> --> 
+        {{ task.description }} --> {{ task.completed }} --> {{ task.created_at }} || <a href="{% url 'edit_task' task.id %}">Edit</a> || <a href="{% url 'delete_task' task.id %}">Delete</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+
+  </body>
+</html>
