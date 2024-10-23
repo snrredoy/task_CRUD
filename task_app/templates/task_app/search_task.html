@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search Task</title>
-    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css" />
-  </head>
-  <body>
-    <a href="/tasks_list">All Task</a> <br />
+{% extends "task_app/base.html" %}
+
+{% block title %} Search Task {% endblock %}
+
+{% block content %}
+    <br>
+    <a style="font-size: 2rem;" href="/tasks_list">All Task</a> <br> <br>
     <h1>Search Task</h1>
     <form method="post">
       {% csrf_token %} {{ search_form }}
@@ -16,5 +13,5 @@
     {% for task in search_tasks %}
     <li><a href="{% url 'task_detail' task.id %}">{{ task.title }}</a> -- {{ task.description }} -- {{ task.completed }} </li>
     {% endfor %} 
-  </body>
-</html>
+    <br>
+{% endblock %}

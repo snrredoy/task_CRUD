@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Task</title>
-    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css" />
+{% extends "task_app/base.html" %}
 
-</head>
-<body>
+{% block title %} Edit Task {% endblock %}
+
+{% block content %}
     <h2>Created Task</h2>
     <form method="post">
         {% csrf_token %}
@@ -17,5 +12,4 @@
             <a style="color: aliceblue;" href="/tasks_list">Cancel</a>
       </button>
     </form>
-</body>
-</html>
+{% endblock %}
